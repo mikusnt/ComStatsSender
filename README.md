@@ -1,5 +1,5 @@
-# COM Stats Sender 1.0
-With basic functionality:
+# COM Stats Sender v1.0
+With basic functionalities:
 - sending a percentage of CPU and RAM usage to TwoVoltmetersStats device
 - automatic COM ports recognition with notifications
 - refresh time, light level and voltometers inertial ratio controlled by sliders
