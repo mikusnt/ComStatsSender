@@ -15,9 +15,9 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="ComStatsSender-ICO.svg"
-   inkscape:export-filename="C:\Users\MS-1\Documents\NetBeansProjects\ComStateSender\ComStatsSender-ICO.png"
-   inkscape:export-xdpi="134.295"
-   inkscape:export-ydpi="134.295"
+   inkscape:export-filename="C:\Users\MS-1\Documents\NetBeansProjects\ComStatsSender\ComStatsSender-ICO.png"
+   inkscape:export-xdpi="268.59"
+   inkscape:export-ydpi="268.59"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <defs
      id="defs2">
@@ -43,9 +43,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="143.87801"
-     inkscape:cy="733.66329"
+     inkscape:zoom="1.979899"
+     inkscape:cx="59.71595"
+     inkscape:cy="774.50208"
      inkscape:document-units="mm"
      inkscape:current-layer="layer3"
      showgrid="true"
@@ -81,7 +81,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>

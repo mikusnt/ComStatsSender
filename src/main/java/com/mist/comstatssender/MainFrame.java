@@ -131,7 +131,7 @@ public class MainFrame extends javax.swing.JFrame {
         //System.out.println(PlatformFactory.getOperatingSystem());
         this.setTitle(PROGRAM_NAME);
         
-        URL ImageURL = DisplayTrayIcon.class.getResource("ComStatsSender-ICO.png");
+        URL ImageURL = DisplayTrayIcon.class.getResource("ComStatsSender-PNG.png");
         //URL ImageURL = getClass().getResource(path);
         this.setIconImage(new ImageIcon(ImageURL, "").getImage());
         
