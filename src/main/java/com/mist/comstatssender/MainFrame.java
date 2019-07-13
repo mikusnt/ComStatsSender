@@ -35,7 +35,10 @@ import ch.qos.logback.classic.Logger;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Point;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URL;
+import java.text.MessageFormat;
 import java.util.Arrays;
 import org.slf4j.LoggerFactory;
 
@@ -80,6 +83,7 @@ public class MainFrame extends javax.swing.JFrame {
     int counterToWritePropsMs = 0; // > 0 - decrement, -1 - to write properties, 0 - stop
     final int WRITE_PROPS_MS = 2000;
     final String shortcutFilename = "COMStatsSender.lnk";
+    final String iconName = "ComStatsSender-PNG.png";
     boolean enableOptions = false;
     boolean doneMinimizedInfo = false;
     final Dimension DEFAULT_SIZE;
@@ -130,14 +134,29 @@ public class MainFrame extends javax.swing.JFrame {
         DEFAULT_SIZE = this.getSize();
         //System.out.println(PlatformFactory.getOperatingSystem());
         this.setTitle(PROGRAM_NAME);
-        
-        URL ImageURL = DisplayTrayIcon.class.getResource("ComStatsSender-PNG.png");
-        //URL ImageURL = getClass().getResource(path);
-        this.setIconImage(new ImageIcon(ImageURL, "").getImage());
-        
         optionsChange(false);
         logger.info("Start to create main frame with logs on level: {}", LOGGER_LVL);
         logger.setLevel(LOGGER_LVL);
+        
+        try {
+            URL imageURL = MainFrame.class.getResource(iconName);
+            if (imageURL == null) {
+                String message = "Cannot find icon file named " + iconName;
+                throw new FileNotFoundException(message);
+
+            }
+            //URL ImageURL = getClass().getResource(path);
+            ImageIcon icon = new ImageIcon(imageURL, "");
+            this.setIconImage(icon.getImage());
+        } catch (Exception e) {
+            String message = "Exception: " + e.getMessage() + " on opening icon image, closing app  with code -1";
+            JOptionPane.showMessageDialog(null, message, PROGRAM_NAME, JOptionPane.ERROR_MESSAGE);
+            logger.error(message, LOGGER_LVL);
+            System.exit(-1);
+            
+        }
+        
+        
         
         
         simpleProps = new SimpleProperties(PROPS_FILENAME, LOGGER_LVL);
